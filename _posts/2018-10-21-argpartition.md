@@ -42,7 +42,7 @@ array([0.0125, 0.1   , 0.0125, 0.025 , 0.2   , 0.25  , 0.4   ])
 
 If you pass an array and an index $k$ to `argpartition` and then rearrange the original array with the array of indices returned by the function, then all elements smaller than or equal to the $k$th greatest element occupies indices less than $k$ and therefore the $k$th greatest element is in its final sorted order. If you instead pass an array of indices $k_1 ,..., k_m$ this property holds for all $m$ indices.
 
-Another way of putting it, after applying the function `argpartition` with a single argument $k$ to some array $\\{a_{i}\\}_{i=1}^{n}$ it will return an array of indices $\\{i_j\\}_{j=1}^n$ such that the rearranged array $\\{a_{i_j}\\}_{j=1}^n$ is in an order that satisfy $a_k \ge a_i$ for all $1 \le i \lt k$ and $a_k \le a_i$ for all $k \lt i \le n$. If instead an array of indices $\\{k_i\\}_{i=1}^m$ is passed to the function then the property will hold for all $k$ in $\\{k_i\\}_{i=1}^m$.
+Another way of putting it, after applying the function `argpartition` with a single argument $k$ to some array $ \{a_{i}\}_{i=1}^{n} $ it will return an array of indices $ \{i_j\}_{j=1}^n $ such that the rearranged array $ \{a_{i_j}\}_{j=1}^n $ is in an order that satisfy $a_k \ge a_i$ for all $1 \le i \lt k$ and $a_k \le a_i$ for all $k \lt i \le n$. If instead an array of indices $\{k_i\}_{i=1}^m$ is passed to the function then the property will hold for all $k$ in $\{k_i\}_{i=1}^m$.
 
 Returning to our initial task, we can select the top $k$ elements efficiently by using `argpartition`
 ```python
