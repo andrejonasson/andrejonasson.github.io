@@ -11,11 +11,10 @@ import numpy as np
 array = np.array([0.2, 0.1, 0.4, 0.025, 0.0125, 0.25, 0.0125])
 
 def sorted_top_k(array, k):
-  " Returns top k elements from an array of n elements in O(n log n) "
   sorted_top_k_idx = np.argsort(array)[-k:]
   return array[sorted_top_k_idx]
 
-sorted_top_3_values = sorted_top_k(array, 3)  # array([0.2 , 0.25, 0.4 ])
+# sorted_top_k(array, 3) == array([0.2 , 0.25, 0.4 ])
 ```
 This approach consumes $$O(n \log n)$$  operations by sorting the array. In circumstances when $$n$$  is large, it can be wasteful to sort the whole array since all we really need is the top $$k$$  elements for some specific $$k$$ .
 
@@ -35,7 +34,8 @@ array([0.0125, 0.0125, 0.4   , 0.025 , 0.2   , 0.25  , 0.1   ])
 array([0.0125, 0.0125, 0.025 , 0.4   , 0.2   , 0.25  , 0.1   ])
 
 # `np.argpartition` allows for negative indices
->> np.argpartition(array, [len(array)-2, len(array)-1]) == np.argpartition(array, [-2, -1])
+>> np.argpartition(array, [len(array)-2, len(array)-1]) \
+>>    == np.argpartition(array, [-2, -1])
 array([ True,  True,  True,  True,  True,  True,  True])
 
 # first and last element in their final sorted order
@@ -52,23 +52,20 @@ Returning to our initial task, we can select the top $$k$$  elements efficiently
 array = np.array([0.2, 0.1, 0.4, 0.025, 0.0125, 0.25, 0.0125])
 
 def top_k(array, k):
-  " Returns top k elements from an array of n elements in O(n) "
   top_k_idx = np.argpartition(array, -k)[-k:]
   return array[top_k_idx]
 
-top_3_values = top_k(array, 3)  # array([0.2 , 0.25, 0.4 ])
+# top_k(array, 3) == array([0.2 , 0.25, 0.4 ])
 # NOTE: it happens to be sorted, but it is not guaranteed
 ```
 This approach consumes only $$O(n)$$  operations to find the top $$k$$  elements.
 
 ``` python
 def sorted_top_k(array, k):
-  " Returns top k elements in sorted order from an array of n elements in O(n + k log k) "
   return top_k(array, k).sort()
 
 
 def sorted_top_k_alternative(array, k):
-  " Returns top k elements in sorted order from an array of n elements in O(n + k log k) "
   top_k_idx = np.argpartition(array, range(-k, 0))[-k:]
   return array[top_k_idx]
 ```
