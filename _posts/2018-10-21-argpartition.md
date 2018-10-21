@@ -1,7 +1,8 @@
 
 ---
 layout: post
-title: Efficiently choosing `k` greatest elements (<code>argpartition</code>)
+title: Efficiently choosing `k` greatest elements (`argpartition`)
+math: true
 ---
 ## Naive approach: Argsort
 Say you want to get the top $$k$$  elements in an array of $$n$$  elements. A simple approach would involve sorting the array and slicing the last $$k$$  elements.
