@@ -16,12 +16,15 @@
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']]
         },
-        svg: {
-          fontCache: 'global'
-        }
+      displayMath: [             // start/end delimiter pairs for display math
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ],
       };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js">
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
