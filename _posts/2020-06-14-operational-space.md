@@ -1,3 +1,7 @@
+---
+layout: post
+title: Operational Space Formulation
+---
 # Operational Space Formulation (draft)
 ### Preliminaries
 Let $q$ be a set of $n$ generalized coordinates
