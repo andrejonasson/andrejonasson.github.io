@@ -6,10 +6,13 @@ title: Operational Space Formulation
 ### Preliminaries
 Let $q$ be a set of $n$ generalized coordinates
 \\[
-A(q)\ddot q + k(q, \dot q) = \tau 
+A(q)\ddot q + k(q, \dot q) = \tau \label{eq1}\tag{1}
 \\]
 
 where $A(q)$ is the inertia matrix, $k(q, \dot q)$ is a collected term for the gravity, centrifugal and Coriolis torques and $\tau$ is the external torques (e.g. motor torques). The inertia matrix $A$ is positive definite since the kinetic energy $\dot q^T A \dot q$ is greater than zero for any $\dot q \ne 0$, this fact will be used later.
+
+$\ref{eq1}$
+
 
 ### Operational Space
 
@@ -19,8 +22,7 @@ The same holds true for force and torque. There are infinite torque solutions in
 $$
 \dot x = J(q) \dot q
 $$
-@eq:1
-where $x$ is the operational space coordinates.
+where $x$ is the operational space coordinates. 
 
 We want to derive the equations governing the dynamics of the operational space. Similarly to how $(X)$ relates torques to changes in the configuration of the joints we want a relationship from operational force to the configuration of the operational coordinates (e.g. end effector position and orientation). 
 
