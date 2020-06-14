@@ -5,9 +5,9 @@ title: Operational Space Formulation
 # Operational Space Formulation (draft)
 ### Preliminaries
 Let $q$ be a set of $n$ generalized coordinates
-$$
+\\[
 A(q)\ddot q + k(q, \dot q) = \tau 
-$$
+\\]
 
 where $A(q)$ is the inertia matrix, $k(q, \dot q)$ is a collected term for the gravity, centrifugal and Coriolis torques and $\tau$ is the external torques (e.g. motor torques). The inertia matrix $A$ is positive definite since the kinetic energy $\dot q^T A \dot q$ is greater than zero for any $\dot q \ne 0$, this fact will be used later.
 
