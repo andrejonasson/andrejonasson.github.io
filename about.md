@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-André Jonasson is a Machine Learning Specialist in the 10X Team of Ocado Technology where he works on machine learning and reinforcement learning.
+André Jonasson is a Machine Learning Specialist in the Ocado Technology 10X where he works on machine learning with applications in robotics. He previously worked on deep natural language processing.
+
+
