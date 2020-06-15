@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Operational Space Formulation
+title: Operational Space Formulation, Task Null Space and Dynamically Consistent Generalized Inverse
 ---
 ### Preliminaries
 Let $q$ be a set of $n$ generalized coordinates
@@ -144,7 +144,7 @@ This matrix can be applied to $\eqref{eq:jdyn}$ to give
 =\Lambda \ddot x + h = F
 \end{equation*}
 </div>
-in addition, properties $\eqref{eq:geninv}$, $\eqref{eq:geninvref}$ can also be verified to hold for $\tilde{J}$. Also, the coefficient of $k(q,\dot q)$ in $X$ can be replaced by $\tilde{J}^T$.
+in addition, properties $\eqref{eq:geninv}$, $\eqref{eq:geninvref}$ can be verified to hold for $\tilde{J}$.
 
 
 ### Conclusion
