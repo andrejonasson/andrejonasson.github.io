@@ -65,24 +65,24 @@ where $\tau_{null}$ is a joint torque vector such that $F$ is still the only ope
 
 A parallel can be drawn with linear algebra where if we have a rank deficient matrix $B$, and there is a particular solution $x_p$ to $Bx = b$ then there exists infinite solutions since $B$ has a nullspace. This is because for any (null solution) $x_n$ in the nullspace of $B$ we have $Bx_n = 0$ and therefore $x=x_p+x_n$ are also solutions to the equation.
 
-We want to find a way to construct null solutions to $\eqref{eq:opdynsol}$. If we had a matrix $\bar J$ such that it was a reflexive generalized inverse of $J$
+We want to find a way to construct null solutions to $\eqref{eq:opdynsol}$. If we had a matrix $\tilde{J}$ such that it was a reflexive generalized inverse of $J$
 \\[
-J = J\bar J J \label{eq:geninv} \tag{7}
+J = J\tilde{J} J \label{eq:geninv} \tag{7}
 \\]
 \\[
-\bar J = \bar J J\bar  J \label{eq:geninvref} \tag{8}
+\tilde{J} = \tilde{J} J\bar  J \label{eq:geninvref} \tag{8}
 \\]
 and it is a dynamically consistent generalized inverse such that the linear equation
 \\[
-\bar J^T\tau = F
+\tilde{J}^T\tau = F
 \\]
 also holds. Then all solutions $\tau$ to the above equation can be written as 
 \\[
-\tau = J^TF + \underbrace{(I-J^T\bar J^T)v}_{\tau_{null}}
+\tau = J^TF + \underbrace{(I-J^T\tilde{J}^T)v}_{\tau_{null}}
 \\]
 where $v$ is any torque vector. The second term on the right can express all null solutions. If $J$ was invertible these conditions would be satisfied by $J^{-1}$, however, it is not invertible in our scenario.
 
-We now wish to find the generalized inverse $\bar J$, we know $\tau_{null}$ cannot affect the operational space dynamics and therefore if we rederive the operational space dynamics with the null solution included
+We now wish to find the generalized inverse $\tilde{J}$, we know $\tau_{null}$ cannot affect the operational space dynamics and therefore if we rederive the operational space dynamics with the null solution included
 \\[
 \ddot x = \dot J \dot q + J A^{-1}(J^TF + \tau_{null}-k)
 \\]
@@ -90,32 +90,32 @@ and rearrange the equation and expand $\tau_{null}$ then
 \\[
 \begin{aligned}
 \Lambda(q) \ddot x + h(q,\dot q) &= F + \Lambda^{-1} J A^{-1}\tau_{null} \\
-                                 &= F + \Lambda^{-1} J A^{-1}(I-J^T\bar J^T)v \\
+                                 &= F + \Lambda^{-1} J A^{-1}(I-J^T\tilde{J}^T)v \\
 \end{aligned}
 \\]
 the last term needs to be a zero vector for any torque vector $v$. We therefore have
 
 \\[
-\Lambda^{-1} J A^{-1}(I-J^T\bar J^T) = 0
+\Lambda^{-1} J A^{-1}(I-J^T\tilde{J}^T) = 0
 \\]
 which gives the dynamically consistent generalized inverse of $J^T$
 \\[
-\bar J^T = \Lambda J A^{-1}
+\tilde{J}^T = \Lambda J A^{-1}
 \\]
 
 This matrix can be applied to $\eqref{eq:jdyn}$ to give
 \\[
-\bar J^T \tau = \bar J^T (A\ddot q + k)
+\tilde{J}^T \tau = \tilde{J}^T (A\ddot q + k)
 =\Lambda \ddot x + h = F
 \\]
-in addition, properties $\eqref{eq:geninv}$, $\eqref{eq:geninvref}$ can also be verified to hold for $\bar J$. Also, the coefficient of $k(q,\dot q)$ in $X$ can be replaced by $\bar J^T$.
+in addition, properties $\eqref{eq:geninv}$, $\eqref{eq:geninvref}$ can also be verified to hold for $\tilde{J}$. Also, the coefficient of $k(q,\dot q)$ in $X$ can be replaced by $\tilde{J}^T$.
 
 
 
 
 ### Conclusion
 
-We have derived the operational space dynamics and the dynamically consistent generalized inverse. Furthermore, the null space projection matrix $(I-J^T\bar J^T)$ can later be used to find torques that accomplish a lower prioritised second task in the null space of a first task.
+We have derived the operational space dynamics and the dynamically consistent generalized inverse. Furthermore, the null space projection matrix $(I-J^T\tilde{J}^T)$ can later be used to find torques that accomplish a lower prioritised second task in the null space of a first task.
 
 
 ### Further reading
