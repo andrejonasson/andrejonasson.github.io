@@ -2,7 +2,7 @@
 layout: post
 title: Efficiently retrieving $k$ greatest elements
 ---
-## Naive approach: Argsort
+### Naive approach: Argsort
 Say you want to retrieve the top $k$  elements from an array of $n$  elements. A simple approach would involve sorting the array and slicing the last $k$  elements.
 
 ```python
@@ -18,7 +18,7 @@ def sorted_top_k(a, k):
 ```
 This approach consumes $O(n \log n)$  operations by sorting the array. In circumstances when $n$  is large, it can be wasteful to sort the whole array since all we really need is the top $k$  elements for some specific $k$ .
 
-## Argpartition
+### Argpartition
 An algorithm that achieves this is introselect. It finishes when all elements greater than the $k$ th greatest element occupies indices greater than $k$  and the $k$ th greatest element is in its final sorted order. With an implementation that output an array in this manner we could just slice the last $k$  elements off and achieve our goal without resorting to sorting the whole array. The `numpy` function `argpartition` lets us do just that and more.
  
 ```python
