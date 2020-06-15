@@ -17,18 +17,20 @@ Say there is an end effector (operational space) that we wish to control with $m
 
 The same holds true for force and torque. There are infinite torque solutions in joint space corresponding to a force in operational space. A particular torque solution is the force torque relationship $\tau = J^TF$ where $J$ is the Jacobian of the forward kinematics from the generalized coordinates to the operational space 
 <div>
-\begin{equation*}
-\dot x = J(q) \dot q \label{eq:xdotjqdot} \tag{2}
-\end{equation*}
+\begin{equation}
+\dot x = J(q) \dot q \label{eq:xdotjqdot}
+\end{equation}
 </div>
 where $x$ is the operational space coordinates. 
 
 We want to derive the equations governing the dynamics of the operational space. Similarly to how $\eqref{eq:jdyn}$ relates torques to changes in the configuration of the joints we want a relationship from operational force to the configuration of the operational coordinates (e.g. end effector position and orientation). 
 
 By the derivative product rule applied to $\eqref{eq:xdotjqdot}$ we can derive a relationship between operational acceleration and joint space dynamics. This equation is key to deriving the operational space dynamics
-\begin{equation}
+<div>
+\begin{equation*}
 \ddot x = \dot J \dot q + J \ddot q
-\end{equation}
+\end{equation*}
+</div>
 Now use $\eqref{eq:jdyn}$ to replace $\ddot q$
 \begin{equation}
 \ddot x = \dot J \dot q + J A^{-1}(\tau-k)
@@ -79,9 +81,11 @@ and it is a dynamically consistent generalized inverse such that the linear equa
 \tilde{J}^T\tau = F
 \end{equation}
 also holds. Then all solutions $\tau$ to the above equation can be written as 
+<div>
 \begin{equation}
 \tau = J^TF + \underbrace{(I-J^T\tilde{J}^T)v}_{\tau_{null}}
 \end{equation}
+</div>
 where $v$ is any torque vector. The second term on the right can express all null solutions. If $J$ was invertible these conditions would be satisfied by $J^{-1}$, however, it is not invertible in our scenario.
 
 We now wish to find the generalized inverse $\tilde{J}$, we know $\tau_{null}$ cannot affect the operational space dynamics and therefore if we rederive the operational space dynamics with the null solution included
