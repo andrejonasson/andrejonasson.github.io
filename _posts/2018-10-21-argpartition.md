@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Efficiently retrieving <span>$k$</span>greatest elements
+title: Efficiently retrieving <span>$k$</span> greatest elements
 ---
 ### Naive approach: Argsort
 Say you want to retrieve the top <span>$k$</span> elements from an array of <span>$n$</span> elements. A simple approach would involve sorting the array and slicing the last <span>$k$</span> elements.
