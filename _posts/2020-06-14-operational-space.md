@@ -6,7 +6,7 @@ title: Operational Space Formulation
 Let $q$ be a set of $n$ generalized coordinates
 
 \begin{equation}
-A(q)\ddot q + k(q, \dot q) = \tau \label{eq:jdyn}
+A(q)\ddot q + k(q, \dot q) = \tau \label{eq:jdyn}\tag{1}
 \end{equation}
 
 where $A(q)$ is the inertia matrix, $k(q, \dot q)$ is a collected term for the gravity, centrifugal and Coriolis torques and $\tau$ is the external torques (e.g. motor torques). The inertia matrix $A$ is positive definite since the kinetic energy $\dot q^T A \dot q$ is greater than zero for any $\dot q \ne 0$, this fact will be used later.
@@ -16,17 +16,19 @@ where $A(q)$ is the inertia matrix, $k(q, \dot q)$ is a collected term for the g
 Say there is an end effector (operational space) that we wish to control with $m$ degrees of freedom and this end effector is part of a manipulator with $n$ joints where $m \lt n$. Then if a joint position exists that expresses an end effector position, then there are infinite such joint positions with the same end effector position. Redundancy..
 
 The same holds true for force and torque. There are infinite torque solutions in joint space corresponding to a force in operational space. A particular torque solution is the force torque relationship $\tau = J^TF$ where $J$ is the Jacobian of the forward kinematics from the generalized coordinates to the operational space 
-\begin{equation}
-\dot x = J(q) \dot q \label{eq:xdotjqdot}
-\end{equation}
+<div>
+\begin{equation*}
+\dot x = J(q) \dot q \label{eq:xdotjqdot} \tag{2}
+\end{equation*}
+</div>
 where $x$ is the operational space coordinates. 
 
 We want to derive the equations governing the dynamics of the operational space. Similarly to how $\eqref{eq:jdyn}$ relates torques to changes in the configuration of the joints we want a relationship from operational force to the configuration of the operational coordinates (e.g. end effector position and orientation). 
 
 By the derivative product rule applied to $\eqref{eq:xdotjqdot}$ we can derive a relationship between operational acceleration and joint space dynamics. This equation is key to deriving the operational space dynamics
-\begin{equation*}
+\begin{equation}
 \ddot x = \dot J \dot q + J \ddot q
-\end{equation*}
+\end{equation}
 Now use $\eqref{eq:jdyn}$ to replace $\ddot q$
 \begin{equation}
 \ddot x = \dot J \dot q + J A^{-1}(\tau-k)
@@ -58,7 +60,7 @@ dim\ \Lambda = (([M][L]^2)^{-1} ([L]/[1])^2))^{-1} = [M]
 As mentioned at the start there is a subspace of the joint torque space that corresponds to a particular operational force $F$ and one of the torques in this subspace is always $\tau = J^TF$, we therefore have solutions
 <div>
 \begin{equation}
-\tau = \underbrace{J^TF}_{\text{particular solution}} + \underbrace{\tau_{null}}_{\text{null solution}} \tag{eq:opdynsol} \tag{6}
+\tau = \underbrace{J^TF}_{\text{particular solution}} + \underbrace{\tau_{null}}_{\text{null solution}} \label{eq:opdynsol} \tag{6}
 \end{equation}
 </div>
 where $\tau_{null}$ is a joint torque vector such that $F$ is still the only operational force acting on the end effector. 
