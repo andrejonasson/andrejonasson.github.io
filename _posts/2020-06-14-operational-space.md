@@ -2,7 +2,6 @@
 layout: post
 title: Operational Space Formulation
 ---
-# Operational Space Formulation (draft)
 ### Preliminaries
 Let $q$ be a set of $n$ generalized coordinates
 
@@ -30,7 +29,7 @@ By the derivative product rule applied to $\eqref{eq:xdotjqdot}$ we can derive a
 \\[
 \ddot x = \dot J \dot q + J \ddot q
 \\]
-Now use $\ref{eq:jdyn}}$ to replace $\ddot q$
+Now use $\eqref{eq:jdyn}$ to replace $\ddot q$
 \\[
 \ddot x = \dot J \dot q + J A^{-1}(\tau-k)
 \\]
@@ -39,7 +38,7 @@ Now use $\ref{eq:jdyn}}$ to replace $\ddot q$
 = \dot J \dot q + J A^{-1}(J^TF-k) \label{eq:opdynintermediate} \tag{3}
 \\]
 
-We can now form a dynamics equation in operational space, similar in form to $\ref{eq:jdyn}}$. We rearrange $\eqref{eq:opdynintermediate}$ such that operational force is by itself on the right hand side, giving
+We can now form a dynamics equation in operational space, similar in form to $\eqref{eq:jdyn}$. We rearrange $\eqref{eq:opdynintermediate}$ such that operational force is by itself on the right hand side, giving
 
 \\[
 \Lambda(q) \ddot x + h(q,\dot q) = F \label{eq:opdyn}\tag{4}
@@ -104,12 +103,12 @@ which gives the dynamically consistent generalized inverse of $J^T$
 \bar J^T = \Lambda J A^{-1}
 \\]
 
-This matrix can be applied to $\ref{eq:jdyn}}$ to give
+This matrix can be applied to $\eqref{eq:jdyn}}$ to give
 \\[
 \bar J^T \tau = \bar J^T (A\ddot q + k)
 =\Lambda \ddot x + h = F
 \\]
-in addition, properties $\ref{eq:geninv}$, $\ref{eq:geninvref}$ can also be verified to hold for $\bar J$. Also, the coefficient of $k(q,\dot q)$ in $X$ can be replaced by $\bar J^T$.
+in addition, properties $\eqref{eq:geninv}$, $\eqref{eq:geninvref}$ can also be verified to hold for $\bar J$. Also, the coefficient of $k(q,\dot q)$ in $X$ can be replaced by $\bar J^T$.
 
 
 

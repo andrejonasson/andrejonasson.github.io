@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Efficiently retrieving `k` greatest elements
+title: Efficiently retrieving $k$ greatest elements
 ---
 ## Naive approach: Argsort
 Say you want to retrieve the top $$k$$  elements from an array of $$n$$  elements. A simple approach would involve sorting the array and slicing the last $$k$$  elements.
