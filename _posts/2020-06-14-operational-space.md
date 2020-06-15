@@ -103,7 +103,7 @@ which gives the dynamically consistent generalized inverse of $J^T$
 \bar J^T = \Lambda J A^{-1}
 \\]
 
-This matrix can be applied to $\eqref{eq:jdyn}}$ to give
+This matrix can be applied to $\eqref{eq:jdyn}$ to give
 \\[
 \bar J^T \tau = \bar J^T (A\ddot q + k)
 =\Lambda \ddot x + h = F
