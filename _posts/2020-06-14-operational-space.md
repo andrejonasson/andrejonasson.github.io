@@ -91,7 +91,7 @@ J = J\tilde{J} J \label{eq:geninv}
 </div>
 <div>
 \begin{equation}
-\tilde{J} = \tilde{J} J\bar  J \label{eq:geninvref}
+\tilde{J} = \tilde{J} J\tilde{J} \label{eq:geninvref}
 \end{equation}
 </div>
 and it is a dynamically consistent generalized inverse such that the linear equation
@@ -149,13 +149,18 @@ in addition, properties $\eqref{eq:geninv}$, $\eqref{eq:geninvref}$ can also be 
 
 ### Conclusion
 
-We have derived the operational space dynamics and the dynamically consistent generalized inverse. Furthermore, the null space projection matrix $(I-J^T\tilde{J}^T)$ can later be used to find torques that accomplish a lower prioritised second task in the null space of a first task.
+We have derived the operational space dynamics and the dynamically consistent generalized inverse and the null space projection matrix. The null space projection matrix $(I-J^T\tilde{J}^T)$ can be extended such that a controller can have a hierarchy of tasks such that lower priority tasks do not interfere with constraints and higher priority tasks. It does this by projecting the torques of lower priority tasks into the nullspace of all higher priority tasks (see further reading).
 
 
 ### Further reading
+Whole-Body Dynamic Behavior and Control of Human-like Robots (2003), https://www.researchgate.net/publication/228984614_Whole-Body_Dynamic_Behavior_and_Control_of_Human-like_Robots
 
+Synthesis Of Whole-body Behaviors Through
+Hierarchical Control Of Behavioral Primitives (2005), http://ai.stanford.edu/manips/publications/pdfs/Sentis_2005_IJHR.pdf
 
 ### References
-https://cs.stanford.edu/groups/manips/publications/pdfs/Khatib_1987_RA.pdf
+A unified approach for motion and force control of robot manipulators: The operational space formulation (1987), https://cs.stanford.edu/groups/manips/publications/pdfs/Khatib_1987_RA.pdf
 
-https://studywolf.wordpress.com/site-index/
+https://studywolf.wordpress.com/2013/09/17/robot-control-4-operation-space-control/
+
+https://studywolf.wordpress.com/2013/09/17/robot-control-5-controlling-in-the-null-space/
