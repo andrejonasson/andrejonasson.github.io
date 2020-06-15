@@ -58,9 +58,11 @@ dim\ \Lambda = (([M][L]^2)^{-1} ([L]/[1])^2))^{-1} = [M]
 
 ### Null space and dynamically consistent generalized inverse
 As mentioned at the start there is a subspace of the joint torque space that corresponds to a particular operational force $F$ and one of the torques in this subspace is always $\tau = J^TF$, we therefore have solutions
+<div>
 \\[
 \tau = \underbrace{J^TF}_{\text{particular solution}} + \underbrace{\tau_{null}}_{\text{null solution}} \tag{eq:opdynsol} \tag{6}
 \\]
+</div>
 where $\tau_{null}$ is a joint torque vector such that $F$ is still the only operational force acting on the end effector. 
 
 A parallel can be drawn with linear algebra where if we have a rank deficient matrix $B$, and there is a particular solution $x_p$ to $Bx = b$ then there exists infinite solutions since $B$ has a nullspace. This is because for any (null solution) $x_n$ in the nullspace of $B$ we have $Bx_n = 0$ and therefore $x=x_p+x_n$ are also solutions to the equation.
