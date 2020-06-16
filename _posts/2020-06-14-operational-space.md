@@ -81,7 +81,7 @@ As mentioned at the start there is a subspace of the joint torque space that cor
 </div>
 where $\tau_{null}$ is a joint torque vector such that $F$ is still the only operational force acting on the end effector. 
 
-A parallel can be drawn with linear algebra where if we have a rank deficient matrix $B$, and there is a particular solution $x_p$ to $Bx = b$ then there exists infinite solutions since $B$ has a nullspace. This is because for any (null solution) $x_n$ in the nullspace of $B$ we have $Bx_n = 0$ and therefore $x=x_p+x_n$ are also solutions to the equation.
+A parallel can be drawn with linear algebra where if we have a rank deficient matrix $B$, and there is a particular solution $x_p$ to $Bx = b$ then there exists infinite solutions since $B$ has a non-zero dimensional nullspace. This is because for any (null solution) $x_n$ in the nullspace of $B$ we have $Bx_n = 0$ and therefore $x=x_p+x_n$ are also solutions to the equation.
 
 We want to find a way to construct null solutions to $\eqref{eq:opdynsol}$. If we had a matrix $\tilde{J}$ such that it was a reflexive generalized inverse of $J$
 <div>
