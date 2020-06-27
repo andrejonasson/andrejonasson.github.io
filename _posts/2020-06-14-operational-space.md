@@ -2,8 +2,12 @@
 layout: post
 title: Operational Space Formulation, Task Null Space and Dynamically Consistent Generalized Inverse
 ---
-### Preliminaries
-Let $q$ be a set of $n$ generalized coordinates
+### Introduction
+In robotics we often want control over the force exerted by the end effector when applying torques at the joints. For this we need to derive the equations of motion for the end effector. For this we need to start with the joint space dynamics.
+
+### Joint Space
+
+Say there is a manipulator with $n$ joints. Let $q$ be a set of $n$ generalized coordinates, then the dynamics that govern the joint space is
 
 <div>
 \begin{equation}
@@ -14,10 +18,9 @@ A(q)\ddot q + k(q, \dot q) = \tau \label{eq:jdyn}
 where $A(q)$ is the inertia matrix, $k(q, \dot q)$ is a collected term for the gravity, centrifugal and Coriolis torques and $\tau$ is the external torques (e.g. motor torques). The inertia matrix $A$ is positive definite since the kinetic energy $\dot q^T A \dot q$ is greater than zero for any $\dot q \ne 0$, this fact will be used later.
 
 ### Operational Space
+Now we want to control the force exerted at end effector (operational space) of the previously mentioned manipulator. It is often the case that the degrees of freedom of the end effector is less than the number of generalized coordinates, when this is the case the manipulator is said to be redundant. We will assume a redundant manipulator which has $m$ degrees of freedom ($m \lt n$). In this case, if a joint configuration exists that expresses an end effector position, then it is not unique.
 
-Say there is an end effector (operational space) that we wish to control with $m$ degrees of freedom and this end effector is part of a manipulator with $n$ joints where $m \lt n$. Then if a joint position exists that expresses an end effector position, then there are infinite such joint positions with the same end effector position. Redundancy..
-
-The same holds true for force and torque. There are infinite torque solutions in joint space corresponding to a force in operational space. A particular torque solution is the force torque relationship $\tau = J^TF$ where $J$ is the Jacobian of the forward kinematics from the generalized coordinates to the operational space 
+The same holds true for forces and torques. The torque solutions in joint space corresponding to a force in operational space are not unique. A particular torque solution that always exist is the force torque relationship $\tau = J^TF$ where $J$ is the Jacobian of the forward kinematics from the generalized coordinates to the operational space 
 <div>
 \begin{equation}
 \dot x = J(q) \dot q \label{eq:xdotjqdot}
@@ -46,7 +49,7 @@ Now use $\eqref{eq:jdyn}$ to replace $\ddot q$
 \end{equation}
 </div>
 
-We can now form a dynamics equation in operational space, similar in form to $\eqref{eq:jdyn}$. We rearrange $\eqref{eq:opdynintermediate}$ such that operational force is by itself on the right hand side, giving
+We can now form the equations of motion in operational space, similar in form to $\eqref{eq:jdyn}$. We rearrange $\eqref{eq:opdynintermediate}$ such that operational force is by itself on the right hand side, giving
 
 <div>
 \begin{equation}
