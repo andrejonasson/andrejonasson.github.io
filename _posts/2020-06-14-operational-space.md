@@ -3,7 +3,11 @@ layout: post
 title: Operational Space Formulation, Task Null Space and Dynamically Consistent Generalized Inverse
 ---
 ### Introduction
-In robotics we often want control over the force exerted by the end effector when applying torques at the joints. For this we need to derive the equations of motion for the end effector. For this we need to start with the joint space dynamics.
+In robotics we often want control over the force exerted by the end effector when applying torques at the joints of a manipulator. To control the end effector force we need to derive the equations of motion for the end effector.
+
+In this post we will derive the end effector (operational space) equations of motion as a function of quantities in joint space. We will assume that we have a redundant manipulator with a greater number of generalized coordinates than operational coordinates of the end effector. 
+
+Redundant manipulators can produce an end effector force using different joint torques. We will derive an operator that projects torques in such a way that the projected torque does not affect the end effector force. Being able to choose different torques for the same result in one task is of interest, for instance, when we have two tasks. If we have a lower priority task and a higher priority task, we can choose to project the lower priority task's torques using the forementioned operator so that it won't affect the higher priority task (see further reading section).
 
 ### Joint Space
 
@@ -18,7 +22,7 @@ A(q)\ddot q + k(q, \dot q) = \tau \label{eq:jdyn}
 where $A(q)$ is the inertia matrix, $k(q, \dot q)$ is a collected term for the gravity, centrifugal and Coriolis torques and $\tau$ is the external torques (e.g. motor torques). The inertia matrix $A$ is positive definite since the kinetic energy $\dot q^T A \dot q$ is greater than zero for any $\dot q \ne 0$, this fact will be used later.
 
 ### Operational Space
-Now we want to control the force exerted at end effector (operational space) of the previously mentioned manipulator. It is often the case that the degrees of freedom of the end effector is less than the number of generalized coordinates, when this is the case the manipulator is said to be redundant. We will assume a redundant manipulator which has $m$ degrees of freedom ($m \lt n$). In this case, if a joint configuration exists that expresses an end effector position, then it is not unique.
+Now we want to control the force exerted in operational space. It is often the case that the degrees of freedom of the end effector is less than the number of generalized coordinates, when this is the case the manipulator is said to be redundant. We will assume a redundant manipulator which has $m$ degrees of freedom ($m \lt n$). In this case, if a joint configuration exists that expresses an end effector position, then it is not unique.
 
 The same holds true for forces and torques. The torque solutions in joint space corresponding to a force in operational space are not unique. A particular torque solution that always exist is the force torque relationship $\tau = J^TF$ where $J$ is the Jacobian of the forward kinematics from the generalized coordinates to the operational space 
 <div>
