@@ -3,9 +3,9 @@ layout: post
 title: Operational Space Formulation, Task Null Space and Dynamically Consistent Generalized Inverse
 ---
 ### Introduction
-In robotics we often want control over the force exerted by the end effector when applying torques at the joints of a manipulator. To control the end effector force we need to derive the equations of motion for the end effector.
+In robotics we often want control over the force exerted by the end effector when applying torques at the joints of a manipulator. To control the operational force we need to derive the equations of motion for the end effector.
 
-In this post we will derive the end effector (operational space) equations of motion as a function of quantities in joint space. We will assume that we have a redundant manipulator with a greater number of generalized coordinates than operational coordinates of the end effector. 
+In this post we will derive the end effector equations of motion in operational space as a function of quantities in joint space. We will assume that we have a redundant manipulator with a greater number of generalized coordinates than operational coordinates of the end effector. 
 
 Redundant manipulators can produce an end effector force using different joint torques. We will derive an operator that projects torques in such a way that the projected torque does not affect the end effector force. Being able to choose different torques for the same result in one task is of interest, for instance, when we have two tasks. If we have a lower priority task and a higher priority task, we can choose to project the lower priority task's torques using the forementioned operator so that it won't affect the higher priority task (see further reading section).
 
